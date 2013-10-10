@@ -7,6 +7,8 @@ class dominios(models.Model):
 	fecha_compra = models.DateField()
 	duracion = models.CharField(max_length=30)
 	fecha_vencimiento = models.DateField()
+	class Admin:
+        pass
 
 
 
@@ -17,3 +19,5 @@ class hosting(models.Model):
 	fecha_compra = models.DateField()
 	duracion = models.CharField(max_length=30)
 	fecha_vencimiento = models.DateField()
+	class Admin:
+        pass
