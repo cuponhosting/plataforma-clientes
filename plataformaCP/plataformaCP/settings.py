@@ -3,6 +3,10 @@
 #encoding:utf-8
 import os
 
+# Redirect when login is correct.
+LOGIN_REDIRECT_URL = "/servicios/"
+# Redirect when login is not correct.
+LOGIN_URL = '/login/'
 
 RUTA_PROYECTO = os.path.dirname(os.path.realpath(__file__))
 
