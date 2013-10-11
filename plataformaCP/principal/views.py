@@ -9,7 +9,7 @@ def login(request):
 	return HttpResponse("Aqui va el formulario de login")	
 
 def servicios(request):
-	tal = "tallllll"
+	tal = "tallll333333ll"
 	return render_to_response("servicios.html", {'tal':tal})	
 
 def logout(request):
