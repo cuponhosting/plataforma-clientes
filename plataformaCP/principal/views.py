@@ -11,8 +11,9 @@ def login(request):
 
 @login_required()
 def servicios(request):
-	tal = "tallll333333ll"
-	return render_to_response("servicios.html", {'tal':tal, 'user': request.user})	
+	#tal = "tallll333333ll"
+	tal = request.user.username
+	return render_to_response("servicios.html", {'tal':tal})	
 
 @login_required()
 def logout(request):
