@@ -1,0 +1,9 @@
+body .devices span {
+            font-size: 128px; 
+            }
+
+body > header .logo {
+            margin-top: 0npx;
+            margin-right: 8px;
+            max-height: 50px; 
+            }
