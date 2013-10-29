@@ -13,14 +13,15 @@ def login(request):
 
 @login_required(login_url='/login')
 def servicios(request):
-	tal = "tallll333333ll"
+	#tal = "tallll333333ll"
 	
 	#tal = request.user.username
-	
+	dominios_l = dominios.objects.all()
+	hosting_l = hosting.objects.all()
 	#tal =  dominios.objects.all().filter(dominio='juarbo.com')
 	#tal =  dominios.objects.get(codigo='2342')
 	#tal =  dominios.objects.get
-	return render_to_response("servicios.html", {'tal':tal})	
+	return render_to_response("servicios.html", {'lista_dominios':dominios_l, 'lista_hosting':hosting_l})	
 
 @login_required(login_url='/login')
 def cerrarsesion(request):

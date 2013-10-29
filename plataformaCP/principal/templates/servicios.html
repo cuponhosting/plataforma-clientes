@@ -4,9 +4,16 @@
 </head>
 
 <body>
-
-{{tal}}
-
+Dominios<br>
+{% for dominio in lista_dominios %}
+	{{dominio.codigo}} {{dominio.dominio}} {{dominio.fecha_compra}} <br>
+{% endfor %}
+<br>
+<br>
+Cuentas de hosting<br>
+{% for hosting in lista_hosting %}
+	{{hosting.codigo}} {{hosting.dominio_principal}} {{hosting.plan}} {{hosting.fecha_compra}} <br>
+{% endfor %}
 
 <br><br>
 <a href="/cerrar-sesion/">Cerrar sesión</a>
