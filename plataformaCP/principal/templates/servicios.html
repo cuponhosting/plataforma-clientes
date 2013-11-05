@@ -35,7 +35,7 @@
 	<div class="row">	
 		<div class="colum_6">
 			<img src="{% static "images/logo.png" %}" class="logo on-left">
-			<h2 class="text italic thin,logo on-left">CuponHosting</h2>
+			<h2 class="text italic thin,logo on-left">CuponHosting</h2>			
 		</div>
 		<nav class="colum_6 text right bold">
 				<a href="#" class="button small">Mis Servicios</a>
@@ -75,8 +75,19 @@
 							<td>{{hosting.dominio_principal}}</td>  
 							<td>{{hosting.fecha_compra}}</td>
 							<td>{{hosting.duracion}}</td>
-							<td class="highlight">{{hosting.fecha_vencimiento}}</td>
-							<!--<td class="highred">{{hosting.fecha_vencimiento}}</td>-->	
+							{% ifequal hosting.expiring_time 'black_alarm' %}
+								<td class="highred">
+							{% endifequal%}
+							{% ifequal hosting.expiring_time 'red_alarm' %}
+								<td class="highred">
+							{% endifequal%}
+							{% ifequal hosting.expiring_time 'orange_alarm' %}
+								<td class="highred">
+							{% endifequal%}
+							{% ifequal hosting.expiring_time 'green_alarm' %}
+								<td class="highlight">
+							{% endifequal%}
+							{{hosting.fecha_vencimiento}}</td>
 						</tr>
 					{% endfor %}
 				</tbody>
@@ -99,7 +110,20 @@
 							<td>{{dominio.dominio}}</td>
 							<td>{{dominio.fecha_compra}}</td>
 							<td>{{dominio.duracion}}</td>
-							<td class="highlight">{{dominio.fecha_vencimiento}}</td>		
+							{% ifequal dominio.expiring_time 'black_alarm' %}
+								<td class="highred">
+							{% endifequal%}
+							{% ifequal dominio.expiring_time 'red_alarm' %}
+								<td class="highred">
+							{% endifequal%}
+							{% ifequal dominio.expiring_time 'orange_alarm' %}
+								<td class="highred">
+							{% endifequal%}
+							{% ifequal dominio.expiring_time 'green_alarm' %}
+								<td class="highlight">
+							{% endifequal%}
+							{{dominio.fecha_vencimiento}}
+							</td>		
 						</tr>
 					{% endfor %}
 				</tbody>
