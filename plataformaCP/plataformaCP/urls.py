@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-#from django.conf.urls.defaults import *
+from django.views.generic import RedirectView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -11,6 +11,7 @@ from django.contrib.auth.views import login
 urlpatterns = patterns('',
     # Examples:
     #url(r'^$', 'principal.views.home', name='home'),
+    url(r'^$', RedirectView.as_view(url='/servicios/')),
     url(r'^servicios/$', 'principal.views.servicios', name='servicios'),
     url(r'^cerrar-sesion/$', 'principal.views.cerrarsesion', name='cerrarsesion'),
     url(r'^admin/', include(admin.site.urls)),
